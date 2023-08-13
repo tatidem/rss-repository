@@ -30,6 +30,27 @@
             <div class="profile">
                 <img src="icons/icon_profile.svg" alt="profile">
             </div>
+            <div class="burger-menu">
+                <div class="burger-icon" id="burger-icon">
+                    <span></span>
+                    <span></span> 
+                    <span></span>    
+                </div>
+
+                <div class="show" id="show">
+                    <ul class="menu_mob">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#favorites">Favorites</a></li>
+                        <li><a href="#coffee">Coffee shop</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
+                        <li><a href="#library-card">Library Card</a></li>
+                    </ul>
+                </div>
+                <div class="cross-icon">
+                    <img src="icons/burger.svg" alt="cross">
+                </div>
+            </div>
+            
         </header>
         <main>
             <section id='welcome' class="Welcome">
@@ -44,9 +65,15 @@
                     The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside
                 </div>
                 <div class="about_wrapper">
-                    <img src="img/about_image1.png" alt="about_image1">
-                    <img src="img/about_image2.png" alt="about_image2">
-                    <img src="img/about_image3.png" alt="about_image3">
+                    <div class="arrow2">
+                        <img src="icons/Arrow 2.svg" alt="arrow2">
+                    </div>
+                    <img src="img/about_image1.png"  alt="about_image1">
+                    <img src="img/about_image2.png"  alt="about_image2">
+                    <img src="img/about_image3.png"  alt="about_image3">
+                    <div class="arrow1">
+                        <img src="icons/Arrow 1.svg" alt="arrow1">
+                    </div>
                 </div>
                 <div class="pagination">
                     <button class="page-btn">
@@ -114,8 +141,7 @@
                         <div class="book_name">The Last Queen</div>
                         <div class="author">By Clive Irving</div>
                         <div class="book_text">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</div>
-                        <button class="buy">Buy</button>
-                        <button class="Own" disabled>Own</button>
+                        <button class="OwnVis">Own</button>
                         <div class="image-item"> 
                             <img src="img/f_book4.png" alt="book4">
                         </div>   
@@ -311,17 +337,16 @@
             
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                const buyButtons = document.querySelectorAll('.buy');
-                const ownButtons = document.querySelectorAll('.Own');
+    const buyButtons = document.querySelectorAll('.buy');
+    const ownButtons = document.querySelectorAll('.Own');
 
-                buyButtons.forEach((buyButton, index) => {
-                    buyButton.addEventListener('click', () => {
-                    buyButton.style.display = 'none';
-
-                    ownButtons[index].style.display = 'block';
-                    });
-                });
-                });
+    buyButtons.forEach((buyButton, index) => {
+        buyButton.addEventListener('click', () => {
+            buyButton.style.display = 'none';
+            ownButtons[index].style.display = 'block';
+        });
+    });
+});
                 </script>
         
             </section>
@@ -486,5 +511,41 @@
             </div>
         </footer>   
     </div>
+    <script>
+    //     document.addEventListener('DOMContentLoaded', function () {
+    //     const burgerIcon = document.getElementById('burger-icon');
+    //     const crossIcon = document.querySelector(".cross-icon");
+    //     const menuShow = document.getElementById('show');
+
+    //     burgerIcon.addEventListener('click', () => {
+    //         menuShow.classList.toggle('active');
+    //         burgerIcon.style.display = "none";
+    //         crossIcon.style.display = "block";
+    //     });
+    //     crossIcon.addEventListener("click", function () {
+    //     menuMob.classList.remove("show");
+    //     burgerIcon.style.display = "block";
+    //     crossIcon.style.display = "none";
+    //     });
+    // });
+    document.addEventListener('DOMContentLoaded', function () {
+        const burgerIcon = document.getElementById('burger-icon');
+        const crossIcon = document.querySelector('.cross-icon');
+        const menuShow = document.getElementById('show');
+
+        burgerIcon.addEventListener('click', () => {
+            menuShow.classList.add('active');
+            burgerIcon.style.display = 'none';
+            crossIcon.style.display = 'block';
+        });
+
+        crossIcon.addEventListener('click', () => {
+            menuShow.classList.remove('active');
+            burgerIcon.style.display = 'flex';
+            crossIcon.style.display = 'none';
+        });
+    });
+       </script>
+    
 </body>
 </html>
