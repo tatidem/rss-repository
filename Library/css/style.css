@@ -59,6 +59,10 @@ ul.menu{
     text-decoration: underline;
 }
 
+.burger-menu{
+    display: none;
+}
+
 .profile img {
     vertical-align: middle;
 }
@@ -330,7 +334,25 @@ input[name="seasonGroup"] {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1px;
-    display: none;
+    display
+    : none;
+}
+.OwnVis{
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 510px;
+    left: 20px;
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background:#FFF;
+    color: #BB945F;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .coffee_text{
@@ -702,3 +724,252 @@ footer a{
 footer a:hover{
     color: #BB945F;
 }
+
+@media (max-width: 1440px) {
+    body {
+        overflow-x: hidden;
+        /* overflow-y: hidden; */
+    }
+    .container {
+        max-width: 100%;
+    }
+    ul.menu{        
+        margin-right:0;
+    }
+    h1{
+        margin-right: 0px;
+    }
+    header{
+       justify-content: space-between; 
+    }
+    .about_wrapper{
+        flex-wrap: wrap;
+       
+    }
+    
+    .about_wrapper img{
+        margin: 0 auto 30px;
+    } 
+    /* .price_text{
+        width: 100%;
+    } */
+    .desserts_price .price_text{
+        width: 100%;
+        text-align: right;
+    }
+    .price_text{
+        width: 100%;
+    }
+    .cards_wrapper{
+        flex-wrap: wrap;
+    }
+    .contacts_wrapper{
+        flex-wrap: wrap;
+    }
+    .rss_wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    .rss{
+        margin: 0 10px 0 10px;
+    }
+    
+}
+
+@media (max-width: 1024px){
+    
+    .menu li{ 
+        font-size: 17px;
+        margin-right: 13px; 
+    }
+    .menu li:last-child {
+        margin-right: 0;
+    }
+    h1{
+        font-size: 24px;
+    }
+    .radio_btn label {
+      
+        margin-right: 55px;
+    }
+    .price_divider{
+        margin: 0 40px;
+        
+    }
+}
+@media (max-width: 768px){
+    h1{
+        font-size: 30px;
+        width: 100%;
+        /* margin-right: 315px; */
+    }
+    ul.menu {
+        display: none;
+    }
+
+    .burger-menu{
+        display: flex;
+    }
+
+    .burger-icon {
+        width: 45px;
+        height: 22px;
+        flex-shrink: 0;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;   
+    }
+
+    .burger-icon span {
+        width: 45px;
+        height: 2px;
+        flex-shrink: 0;
+        background-color: #fff;
+        transition: all 0.5s;   
+    }
+    
+    .profile{
+        margin-right: 40px;
+
+    }
+
+    .show {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 332px;
+        height: 518px;
+        background: #0C0C0E;
+        color: #fff;
+        z-index: 1000;
+        padding: 20px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        
+    }
+
+
+    .menu_mob{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 30px;
+        list-style-type: none;
+    }
+    
+    .menu_mob a{
+        color: #FFF;
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 50px;
+        margin-bottom: 30px;
+        text-decoration: none; 
+        text-align: center;
+    }
+
+    .show.active {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+    }
+   
+    .cross-icon {
+        cursor: pointer;
+        display: none;
+    }
+    .about{
+        position: relative;
+    }
+    .about_text{
+        padding: 0 20px;
+    }
+
+    .about_wrapper img:nth-child(2),
+    .about_wrapper img:nth-child(3) {
+        display: none;
+    }
+
+    .about_wrapper{
+        width: 590px;
+        align-items: center;
+        margin: 0 auto;
+    
+    }
+    .favorites_text{
+        margin-left: 20px;
+    }
+    .radio_btn label {
+        margin-right: 63px;
+    }
+    .radio_btn label:last-child {
+        margin-right: 0px;
+    }
+
+.season_block {
+   
+    justify-content: center;
+    margin-bottom: 58px;
+    }
+    .price_text{
+        width: 199px;
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+    }
+    
+    .price_divider{
+        width: 100px;
+        height: 1px;
+        background: #BB945F;
+        margin: 0 59px;
+    }
+    .desserts_price .price_text{
+        width: 300px;
+        text-align: right;
+    }
+    .price_wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .desserts_price{
+        margin-left: auto;
+        margin-top: 40px;  
+    } 
+    .map{
+        margin-top: 100px;
+        margin-left: 15px;
+    }
+    .cards_wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    .get_card{
+        margin-top: 21px;
+        align-items: center;
+        text-align: center;
+    }
+    .get_card p{
+        text-align: center;
+        width: 600px;
+        padding: 10px;
+        margin-top: 30px;   
+    }
+    .get_card button{
+        margin-top: 30px;
+        margin-left: 7px;
+        margin-right: 15px;
+    }
+}
+ 
+
