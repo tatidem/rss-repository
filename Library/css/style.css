@@ -141,9 +141,12 @@ h2{
     height: 26px;
     cursor: pointer;
     background-color: transparent;
-    border: none;
-    
+    border: none;  
 }
+    .page-btn:nth-child(4),
+    .page-btn:nth-child(5) {
+        display: none;
+    }
 
 .page-btn::after{
     content: "";
@@ -696,7 +699,7 @@ ul.social_media{
 }
 
 footer .divider{
-    width: 1400px;
+    width: 100%;
     height: 1px;
     background: #FFF;
     margin-top: 20px;
@@ -897,7 +900,19 @@ footer a:hover{
         width: 100%;
         align-items: center;
         margin: 0 auto;
-    
+        padding: 20px 77px 0;
+    }
+    .pagination {
+        margin: 5px 0 52px;
+    }
+    .page-btn:nth-child(4),
+    .page-btn:nth-child(5) {
+        display: flex;
+    }
+
+    .arrow2 img,
+    .arrow1 img {
+        margin: 0px; 
     }
     .favorites_text{
         margin-left: 20px;
@@ -972,7 +987,7 @@ footer a:hover{
     }
     .container {
         position: relative;
-        width: 100%;
+        width: 768px;
         margin: 0 auto;
     }
     .map{
