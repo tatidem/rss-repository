@@ -1,0 +1,489 @@
+.Welcome{
+    display: flex;
+    height: 600px;
+    background: url('../img/Welcome.png') center center/cover no-repeat;
+}
+
+.welcome_lib{
+    background: #0C0C0E;
+    margin-top: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 220px;
+    padding: 35px 40px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Forum', serif;
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 50px;
+    letter-spacing: 3px;
+}
+
+
+
+.divider{
+    width: 50px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #0C0C0E;
+    margin: 17px auto 0;
+}
+
+.about_text{
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    margin-top: 40px;
+}
+
+.about_wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0 52px;
+}
+
+.page-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;  
+}
+.page-btn:nth-child(4),
+.page-btn:nth-child(5) {
+    display: none;
+}
+.page-btn::after{
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #000;
+    transition: background-color 0.5s ease;
+}
+
+.page-btn:hover::after{
+    background-color: #BB945F;
+} 
+
+.arrow2 img,
+    .arrow1 img {
+        display: none; 
+    }
+
+.favorites_text{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 40px 0 0 20px;
+}
+.radio_btn{
+    margin-top: 35px;
+}
+
+
+
+.season_block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 58px;
+    }
+
+    
+.hidden {
+    display: none;
+}
+
+.book_review{
+    position: relative;
+    width: 550px;
+    height: 555px;
+    flex-shrink: 0;
+    border: 1px solid #000;
+    background: #FFF;
+    margin: 39px 60px 0 20px;
+}
+
+.image-item{
+    position: absolute;
+    top: 254px;
+    left: 390px;
+}
+
+.Staff{
+    color: #000;
+    font-family: 'Forum', serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 2px;
+    margin: 14px 0 0 20px;
+}
+
+.book_divider{
+    width: 60px;
+    height: 1px;
+    background: #BB945F;
+    margin-left: 20px;
+}
+
+.book_name{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 20px 0 0 20px;
+}
+
+.author{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin-left: 20px;
+}
+
+.book_text{
+    width: 355px;
+    margin-top: 19px;
+    margin-left: 20px;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.buy{
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    background:#FFF;
+    cursor: pointer;
+    position: absolute;
+    top: 508px;
+    left: 20px;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.5s ease;
+}
+
+.buy:hover{
+    background: #BB945F;
+    border: none;
+}
+
+.Own{
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 510px;
+    left: 20px;
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background:#FFF;
+    color: #BB945F;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display
+    : none;
+}
+.OwnVis{
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 510px;
+    left: 20px;
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background:#FFF;
+    color: #BB945F;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.coffee_text{
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin: 40px 20px;
+}
+
+.price_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 61px 20px;
+}
+
+
+
+.item_price{
+    display: flex;
+    align-items: center;
+    margin-top: 39px;
+}
+
+.price_text{
+    width: 199px;
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.price_divider{
+    width: 100px;
+    height: 1px;
+    background: #BB945F;
+    margin: 0 59px;
+}
+
+.price_amount{
+    color: #000;
+    font-family: 'Forum', serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.desserts_price h3{
+    text-align: right;
+}
+
+.desserts_price .price_text{
+    width: 300px;
+    text-align: right;
+}
+
+.contacts_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 20px 56px 20px;
+}
+
+.contacts_text h5{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: 40px; 
+}
+
+.tel{
+    color: #000;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+
+.senior_staff{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
+
+.mail{
+    color: #000;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+.contacts_text a{
+    color: black;
+    text-decoration: none;
+}
+
+.contacts_text a:hover{
+    color: #BB945F;
+    text-decoration: none;
+    font-weight: bold;
+}
+.mail a{
+    font-weight: bold;
+}
+
+.cards_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 20px 41px 20px;
+}
+
+.find_text{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+.get_text{
+    color: #000;
+    text-align: right;
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+}
+
+.card_form_wrapper {
+    margin-top: 29px;
+    width: 600px;
+    height: 386px;
+    border: 3px solid #BB945F;
+    background: #FFF;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_form{
+    padding: 20px 20px 0;
+    margin-top: 18px;
+    width: 560px;
+    height: 272px;
+    background: #BB945F;
+}
+
+.BPL{
+    color: #000;
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+    margin-bottom: 20px;
+}
+
+
+.get_text{
+    color: #000;
+    text-align: center;
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: end;
+}
+
+.get_card p{
+    width: 456px;
+    margin-top: 35px;
+    color: #000;
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.4px;
+}
+
+.get_card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.get_card button{
+    width: 75px;
+    height: 30px;
+    background-color:#FFF;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin: 35px 0 0 17px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.get_card button:hover{
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background: #BB945F;
+}
