@@ -1,0 +1,46 @@
+header{
+    display: flex;
+    align-items: center;
+    height: 90px;
+    background: #0C0C0E;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+ul.menu{
+    display: flex;
+    list-style-type: none;
+    margin: 0 40px 0 0;
+}
+
+.menu li{
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    margin-right: 30px; 
+
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.menu li a:hover {
+    color: #a58c18;   
+    text-decoration: underline;
+}
+
+.burger-menu{
+    display: none;
+}
+
+.profile img {
+    vertical-align: middle;
+}

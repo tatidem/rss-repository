@@ -21,3 +21,89 @@ function evaluateProject() {
   );
 }
   evaluateProject();
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('input[name="seasonGroup"]');
+    const seasonBlocks = document.querySelectorAll('.season_block');
+    const labels = document.querySelectorAll('.radio_btn label');
+
+    for (let i = 1; i < seasonBlocks.length; i++) {
+    seasonBlocks[i].classList.add('hidden');
+    }
+
+    buttons[0].classList.add('active');
+    labels[0].style.fontWeight = 'bold';
+
+    buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+
+        seasonBlocks.forEach((block) => {
+        block.classList.add('hidden');
+        });
+
+        seasonBlocks[index].classList.remove('hidden');
+
+        buttons.forEach((btn) => {
+        btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        labels.forEach((label) => {
+        label.style.fontWeight = 'normal';
+        });
+
+        labels[index].style.fontWeight = 'bold';
+    });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const buyButtons = document.querySelectorAll('.buy');
+  const ownButtons = document.querySelectorAll('.Own');
+
+  buyButtons.forEach((buyButton, index) => {
+      buyButton.addEventListener('click', () => {
+          buyButton.style.display = 'none';
+          ownButtons[index].style.display = 'block';
+      });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const burgerIcon = document.getElementById('burger-icon');
+  const crossIcon = document.querySelector('.cross-icon');
+  const menuShow = document.getElementById('show');
+  const menuItems = document.querySelectorAll('.menu_mob li');
+
+  burgerIcon.addEventListener('click', () => {
+      menuShow.classList.add('active');
+      burgerIcon.style.display = 'none';
+      crossIcon.style.display = 'block';
+  });
+
+  crossIcon.addEventListener('click', () => {
+      menuShow.classList.remove('active');
+      burgerIcon.style.display = 'flex';
+      crossIcon.style.display = 'none';
+  });
+  menuItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      menuShow.classList.remove('active');
+      burgerIcon.style.display = 'flex';
+      crossIcon.style.display = 'none';
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (
+      !menuShow.contains(e.target) &&
+      e.target !== burgerIcon &&
+      e.target !== crossIcon
+    ) {
+      // Если клик был вне меню, бургера и крестика
+      menuShow.classList.remove('active');
+      burgerIcon.style.display = 'flex';
+      crossIcon.style.display = 'none';
+    }
+  });
+});
