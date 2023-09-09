@@ -711,7 +711,6 @@ footer a:hover {
   h1 {
     font-size: 30px;
     width: 100%;
-    /* margin-right: 315px; */
   }
   ul.menu {
     display: none;
@@ -733,7 +732,6 @@ footer a:hover {
     height: 2px;
     flex-shrink: 0;
     background-color: #fff;
-    transition: all 0.5s;
   }
   .profile {
     margin-right: 40px;
