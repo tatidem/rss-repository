@@ -70,6 +70,12 @@
 .page-btn:nth-child(5) {
     display: none;
 }
+
+// .page-btn.active-button::after{
+//     display: none;
+//     background-color: #BB945F;
+  
+// }
 .page-btn::after{
     content: "";
     width: 16px;
@@ -82,6 +88,8 @@
 .page-btn:hover::after{
     background-color: #BB945F;
 } 
+
+
 
 .arrow2 img,
     .arrow1 img {
@@ -108,7 +116,16 @@
     margin-bottom: 58px;
     }
 
-    
+.season_block.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.season_block.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+} 
+
 .hidden {
     display: none;
 }
@@ -463,27 +480,8 @@
     align-items: flex-end;
 }
 
-.get_card button{
-    width: 75px;
-    height: 30px;
-    background-color:#FFF;
-    flex-shrink: 0;
-    border-radius: 2px;
-    border: 1px solid #0C0C0E;
-    color: #0C0C0E;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1px;
-    margin: 35px 0 0 17px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
+.get_card .Sign_Up.Log_in button{
+    margin: 35px 0 0 17px;  
 }
 
-.get_card button:hover{
-    border-radius: 2px;
-    border: 1px solid #BB945F;
-    background: #BB945F;
-}
+
