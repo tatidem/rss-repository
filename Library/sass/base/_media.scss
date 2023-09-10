@@ -23,7 +23,9 @@
     .about_wrapper img{
         margin: 0 auto 30px;
     } 
-    
+    /* .price_text{
+        width: 100%;
+    } */
     .desserts_price .price_text{
         width: 100%;
         text-align: right;
@@ -105,7 +107,7 @@
 
     }
 
-    .show {
+    .burger_show {
         display: none;
         position: absolute;
         top: 60px;
@@ -117,8 +119,8 @@
         z-index: 1000;
         padding: 20px;
         transform: translateX(100%);
-        // transition: right 0.3s ease-in-out;
-        // transition: opacity 0.3s ease, transform 0.3s ease;
+        
+       
         
     }
 
@@ -147,7 +149,7 @@
         text-decoration: underline;
     }
 
-    .show.active {
+    .burger_show.active {
         display: block;
         opacity: 1;
         transform: translateX(0);

@@ -30,6 +30,69 @@
             <div class="profile">
                 <img src="icons/icon_profile.svg" alt="profile">
             </div>
+            <div class="profile_register Register">
+                <div class="Profile">Profile</div>
+                <div class="divider2"></div>
+                <div class="text Log in"><a href="#" id="loginLink">Log In</a></div>
+                <div class="text Register"><a href="#" id="registerLink">Register</a></div>
+            </div>
+            <div class="profile_register Login">
+                <div class="Profile">Profile</div>
+                <div class="divider2"></div>
+                <div class="text My profile">My profile</div>
+                <div class="text Log Out">Log Out</div>
+            </div>
+            <div class="modal register_form">
+                <div class="action register">Register</div>
+                <div class="close_button"><img src="/Library/icons/close_btn.svg" alt="close"></div>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="Have_account">Already have an account? <a href="#" id="loginLink">Login</a></div>
+                </form>
+                <div class="Sign_Up Log_in">
+                    <button type="submit">Sign Up</button>
+                </div>
+                
+
+        
+            </div>
+            <div class="overlay"></div>
+            <div class="modal Login_form">
+                <div class="action login">Login</div>
+                <div class="close_button"><img src="/Library/icons/close_btn.svg" alt="close"></div>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="email">E-mail or readers card</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="Have_account">Don’t have an account? <a href="">Register</a></div>
+                    
+                </form>
+                <div class="Sign_Up Log_in">
+                    <button type="submit">Log In</button>
+                </div>
+                
+
+            </div>
             <div class="burger-menu">
                 <div class="burger-icon" id="burger-icon">
                     <span></span>
@@ -37,7 +100,7 @@
                     <span></span>    
                 </div>
 
-                <div class="show" id="show">
+                <div class="burger_show" id="burger_show">
                     <ul class="menu_mob">
                         <li><a href="#about">About</a></li>
                         <li><a href="#favorites">Favorites</a></li>
@@ -49,8 +112,7 @@
                 <div class="cross-icon">
                     <img src="icons/burger.svg" alt="cross">
                 </div>
-            </div>
-            
+            </div> 
         </header>
         <main>
             <section id='welcome' class="Welcome">
@@ -68,25 +130,25 @@
                     <div class="arrow2">
                         <img src="icons/Arrow 2.svg" alt="arrow2">
                     </div>
-                    <img src="img/about_image1.png"  alt="about_image1">
-                    <img src="img/about_image2.png"  alt="about_image2">
-                    <img src="img/about_image3.png"  alt="about_image3">
+                    <img src="img/about_image1.png" class="about-image" alt="about_image1">
+                    <img src="img/about_image2.png" class="about-image" alt="about_image2">
+                    <img src="img/about_image3.png" class="about-image" alt="about_image3">
+                    <img src="img/about_image4.png" class="about-image" alt="about_image4">
+                    <img src="img/about_image5.png" class="about-image" alt="about_image5">
                     <div class="arrow1">
                         <img src="icons/Arrow 1.svg" alt="arrow1">
                     </div>
                 </div>
                 <div class="pagination">
-                    <button class="page-btn">
+                    <button class="page-btn" class="active-button">
                     </button>
-                    <button class="page-btn">
+                    <button class="page-btn" class="active-button">
                     </button>
-                    <button class="page-btn">
+                    <button class="page-btn" class="active-button">
                     </button>
+                    <button class="page-btn" class="active-button">
                     </button>
-                    <button class="page-btn">
-                    </button>
-                    </button>
-                    <button class="page-btn">
+                    <button class="page-btn" class="active-button">
                     </button>
                 </div>          
             </section>
@@ -424,7 +486,7 @@
                     <div class="get_card">
                         <div class="get_text">Get a reader card</div>
                         <p>You will be able to see a reader card after logging into account or you can register a new account</p>
-                        <div class="buttons">
+                        <div class="buttons Sign_Up Log_in">
                             <button>Sign Up</button>
                             <button>Log in</button>
                         </div> 
