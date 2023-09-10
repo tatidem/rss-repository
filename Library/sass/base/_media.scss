@@ -107,7 +107,7 @@
 
     }
 
-    .show {
+    .burger_show {
         display: none;
         position: absolute;
         top: 60px;
@@ -149,7 +149,7 @@
         text-decoration: underline;
     }
 
-    .show.active {
+    .burger_show.active {
         display: block;
         opacity: 1;
         transform: translateX(0);

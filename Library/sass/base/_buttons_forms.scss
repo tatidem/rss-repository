@@ -93,3 +93,27 @@ input::placeholder {
     line-height: 50px;
     letter-spacing: 0.6px;
 }
+
+.Sign_Up.Log_in button{
+    width: 75px;
+    height: 30px;
+    background-color:#FFF;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.Sign_Up.Log_in button:hover{
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background: #BB945F;
+}
