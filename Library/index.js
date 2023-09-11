@@ -121,17 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
   updateLayout();
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const buyButtons = document.querySelectorAll('.buy');
-  const ownButtons = document.querySelectorAll('.Own');
 
-  buyButtons.forEach((buyButton, index) => {
-      buyButton.addEventListener('click', () => {
-          buyButton.style.display = 'none';
-          ownButtons[index].style.display = 'block';
-      });
-  });
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('input[name="seasonGroup"]');
@@ -185,26 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const profileIcon = document.querySelector('.profile');
-//   const profileRegister = document.querySelector('.profile_register.Register');
 
-//   // При нажатии на иконку профиля
-//   profileIcon.addEventListener('click', function (event) {
-//       // event.stopPropagation(); // Предотвращаем всплытие события
-
-//       // Переключаем видимость элемента .profile_register.Register
-//       profileRegister.classList.toggle('show');
-//   });
-
-//   // При нажатии за пределами элемента .profile_register.Register
-//   document.addEventListener('click', function (event) {
-//       // Если нажатие было за пределами .profile_register.Register
-//       if (!profileRegister.contains(event.target) && !profileIcon.contains(event.target)) {
-//           profileRegister.classList.remove('show'); // Скрываем элемент
-//       }
-//   });
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
   const profileIcon = document.querySelector('.profile');
@@ -326,6 +297,18 @@ document.addEventListener('DOMContentLoaded', function () {
   //     registerForm.style.display = 'none';
   //   }
   // });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const buyButtons = document.querySelectorAll('.buy');
+  const ownButtons = document.querySelectorAll('.Own');
+
+  buyButtons.forEach((buyButton, index) => {
+      buyButton.addEventListener('click', () => {
+          buyButton.style.display = 'none';
+          ownButtons[index].style.display = 'block';
+      });
+  });
 });
 
 
