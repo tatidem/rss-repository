@@ -1,24 +1,6 @@
 function evaluateProject() {
-  console.log(
-    "Самооценка по пунктам:\n" +
-    "блок <header> +2\n" +
-    "секция Welcome +2\n" +
-    "секция About +4\n" +
-    "секция Favorites +2\n" +
-    "секция CoffeShop +4\n" +
-    "секция Contacts +4\n" +
-    "секция LibraryCard +4\n" +
-    "блок <footer> +2\n" +
-    "Ни на одном из разрешений до 640px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +12\n" +
-    "нет полосы прокрутки при ширине страницы от 1440рх до 640рх +4.\n" +
-    "элементы не выходят за пределы окна браузера при ширине страницы от 1440рх до 640рх +4.\n" +
-    "элементы не наезжают друг на друга при ширине страницы от 1440рх до 640рх +4.\n" +
-    "На ширине экрана 768рх реализовано адаптивное меню +12\n" +
-    "при нажатии на бургер-иконку плавно появляется адаптивное меню +4\n" +
-    "при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран +2\n" +
-    "ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям при нажатии, а само адаптивное меню при этом плавно скрывается +2\n" +
-    "размеры открытого бургер-меню соответствуют макету, так же открытое бургер-меню проверяется на PixelPerfect +2"
-  );
+  console.log()
+  
 }
   evaluateProject();
 
@@ -246,15 +228,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // При нажатии на ссылку "Login"
   loginLink.addEventListener('click', function () {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
     profileRegister.classList.remove('show'); // Скрываем элемент
-  });
+});
 
-  // При нажатии на ссылку "Register"
-  registerLink.addEventListener('click', function () {
+// При нажатии на ссылку "Register"
+registerLink.addEventListener('click', function () {
+    registerForm.style.display = 'block';
+    loginForm.style.display = 'none';
     profileRegister.classList.remove('show'); // Скрываем элемент
-  });
+});
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -301,6 +286,51 @@ document.addEventListener("DOMContentLoaded", function () {
   //   }
   // });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const signUpButton = document.querySelector('.get_card .buttons .Sign_Up'); // Получаем кнопку "Sign Up"
+  const loginButton = document.querySelector('.get_card .buttons .Log_in'); // Получаем кнопку "Log in"
+  const loginForm = document.querySelector('.modal.Login_form');
+  const registerForm = document.querySelector('.modal.register_form');
+  const closeButtons = document.querySelectorAll('.close_button');
+  const overlay = document.querySelector(".overlay");
+
+  // При нажатии на кнопку "Sign Up"
+  signUpButton.addEventListener('click', function () {
+    registerForm.style.display = 'block';
+    loginForm.style.display = 'none';
+    overlay.style.display = "block";
+  });
+
+  // При нажатии на кнопку "Log in"
+  loginButton.addEventListener('click', function () {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+    overlay.style.display = "block";
+  });
+
+  // Закрытие формы при клике на элементы с классом .close_button
+  closeButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'none';
+      overlay.style.display = "none";
+    });
+  });
+
+  // Закрытие формы при клике вне формы
+  // document.addEventListener('click', function (event) {
+  //   // Проверяем, является ли элемент, на который кликнули, частью формы или ее дочерним элементом
+  //   if (!loginForm.contains(event.target) && !registerForm.contains(event.target)) {
+  //     loginForm.style.display = 'none';
+  //     registerForm.style.display = 'none';
+  //   }
+  // });
+});
+
+
+
+
 
 
 
