@@ -137,8 +137,7 @@
     flex-shrink: 0;
     border: 1px solid #000;
     background: #FFF;
-    margin: 39px 60px 0 20px;
-    z-index: -1;
+    margin: 39px 60px 0 20px;   
 }
 
 .image-item{
@@ -201,67 +200,7 @@
     text-transform: capitalize;
 }
 
-.buy{
-    width: 75px;
-    height: 30px;
-    flex-shrink: 0;
-    background:#FFF;
-    cursor: pointer;
-    position: absolute;
-    top: 508px;
-    left: 20px;
-    border-radius: 2px;
-    border: 1px solid #0C0C0E;
-    color: #0C0C0E;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: background-color 0.5s ease;
-}
 
-.buy:hover{
-    background: #BB945F;
-    border: none;
-}
-
-.Own{
-    width: 75px;
-    height: 30px;
-    flex-shrink: 0;
-    position: absolute;
-    top: 510px;
-    left: 20px;
-    border-radius: 2px;
-    border: 1px solid #BB945F;
-    background:#FFF;
-    color: #BB945F;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    display
-    : none;
-}
-.OwnVis{
-    width: 75px;
-    height: 30px;
-    flex-shrink: 0;
-    position: absolute;
-    top: 510px;
-    left: 20px;
-    border-radius: 2px;
-    border: 1px solid #BB945F;
-    background:#FFF;
-    color: #BB945F;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
 
 .coffee_text{
     color: #000;
