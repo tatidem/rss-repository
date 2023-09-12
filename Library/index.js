@@ -4,7 +4,7 @@ function evaluateProject() {
 }
   evaluateProject();
 
-
+var MYDATA;
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -289,6 +289,48 @@ document.addEventListener("DOMContentLoaded", function () {
     }
      });
     });
+	
+	
+	
+	document.querySelector('#register_btn').addEventListener('click', function () {
+    // Получите значения из полей ввода
+    var firstName = document.getElementById("first-name").value;
+    var lastName = document.getElementById("last-name").value;
+    var email = document.getElementById("email").value;
+    var pass = document.getElementById("password").value;
+
+    // Проверьте, что поля не пустые
+    if (firstName ) {//&& lastName && email && pass
+		MYDATA = {
+			firstName: firstName,
+			lastName:  lastName,
+			email: email,
+			pass: pass 
+		}
+		document.getElementById("initialInput").innerHTML = firstName.charAt(0) + lastName.charAt(0);
+        document.querySelector('.profile_icon').style.display = "none";
+		document.querySelector('.user_authorised').style.display = "flex";
+        registerForm.style.display = "none";
+		overlay.style.display = "none";
+    } else {
+		alert("dfdsfd");
+	}
+});
+
+// Добавьте обработчик события для иконки профиля
+profileIcon.addEventListener('click', function () {
+    // При клике на иконку профиля показать форму .profile_register.Login
+    profileRegister.classList.add('show');
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
 });
 
 
@@ -307,6 +349,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+/* const registerForm = document.querySelector(".modal.register_form");
+const firstNameInput = document.getElementById("first-name");
+const lastNameInput = document.getElementById("last-name");
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const initialInput = document.getElementById("initialInput");
+
+// Получите элементы профиля
+const profileIcon = document.querySelector('.profile_icon');
+const profileRegister = document.querySelector('.profile_register.Register');
+
+// Добавьте обработчик события для кнопки "Sign Up"
+const signUpButton = document.querySelector('#register_btn'); // Получаем кнопку "Sign Up" */
 
 
 

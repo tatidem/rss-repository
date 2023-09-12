@@ -29,7 +29,8 @@
                     </ul>
                 </nav>
                 <div class="profile">
-                    <img src="icons/icon_profile.svg" alt="profile">
+                    <img class="profile_icon" src="icons/icon_profile.svg" alt="profile">
+                    <div class="user_authorised" id="initialInput">JD</div>
                     <div class="profile_register Register">
                         <div class="Profile">Profile</div>
                         <div class="divider2"></div>
@@ -39,8 +40,8 @@
                     <div class="profile_register Login">
                         <div class="Profile">Profile</div>
                         <div class="divider2"></div>
-                        <div class="text My profile">My profile</div>
-                        <div class="text Log Out">Log Out</div>
+                        <div class="text My profile"><a href="#" id="myProfile">My profile</a></div>
+                        <div class="text Log Out"><a href="#" id="LogOut"></a>Log Out</div>
                     </div>
         
                 </div>
@@ -505,7 +506,7 @@
                     </div>
                     <div class="Have_account">Already have an account? <a href="#" id="loginLink">Login</a></div>
                 </form>
-                <div class="Sign_Up Log_in">
+                <div class="Sign_Up Log_in" id="register_btn">
                     <button type="submit">Sign Up</button>
                 </div>
             </div>
