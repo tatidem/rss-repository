@@ -261,6 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
   const signUpButton = document.querySelector('.get_card .buttons .Sign_Up'); // Получаем кнопку "Sign Up"
   const loginButton = document.querySelector('.get_card .buttons .Log_in'); // Получаем кнопку "Log in"
+  const buyButton = document.querySelector('.season_block .buy'); // Получаем кнопку "buy"
   const loginForm = document.querySelector('.modal.Login_form');
   const registerForm = document.querySelector('.modal.register_form');
   const closeButtons = document.querySelectorAll('.close_button');
@@ -275,6 +276,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // При нажатии на кнопку "Log in"
   loginButton.addEventListener('click', function () {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+    overlay.style.display = "block";
+  });
+
+  // При нажатии на кнопку "buy"
+  buyButton.addEventListener('click', function () {
     loginForm.style.display = 'block';
     registerForm.style.display = 'none';
     overlay.style.display = "block";
