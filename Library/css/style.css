@@ -1209,8 +1209,10 @@ input::placeholder {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 25px;
+  padding: 20px;
   gap: 15px;
+  height: 400px;
+  width: 170px;
 }
 
 .profile_logo {
@@ -1235,8 +1237,7 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   background: #FFF;
-  width: 120px;
-  height: 30px;
+  width: auto;
   flex-shrink: 0;
   color: #000;
   text-align: center;

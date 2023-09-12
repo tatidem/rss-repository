@@ -269,6 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       loginForm.style.display = "none";
       registerForm.style.display = "none";
+	  document.querySelector('.modal.profile').style.display = "none";
       overlay.style.display = "none"; // Скрываем подложку
     });
   });
@@ -278,6 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target == overlay) {
       loginForm.style.display = "none";
       registerForm.style.display = "none";
+	  document.querySelector('.modal.profile').style.display = "none";
       overlay.style.display = "none"; // Скрываем подложку
     }
   });
@@ -300,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var pass = document.getElementById("password").value;
 
     // Проверьте, что поля не пустые
-    if (firstName ) {//&& lastName && email && pass
+    if (firstName && lastName && email && pass) {//&& lastName && email && pass
 		MYDATA = {
 			firstName: firstName,
 			lastName:  lastName,
@@ -311,25 +313,33 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.profile_icon').style.display = "none";
 		document.querySelector('.user_authorised').style.display = "flex";
         registerForm.style.display = "none";
-		overlay.style.display = "none";
+		    overlay.style.display = "none";
     } else {
-		alert("dfdsfd");
+		alert("Введите данные");
 	}
 });
 
 // Добавьте обработчик события для иконки профиля
-profileIcon.addEventListener('click', function () {
+
+document.getElementById("initialInput").addEventListener('click', function () {
+  // const profileRegister = document.querySelector('.profile_register.Register');
+  //const profileLogin = document.querySelector('.profile_register.Login');
     // При клике на иконку профиля показать форму .profile_register.Login
-    profileRegister.classList.add('show');
+    document.querySelector('.profile_register.Register').classList.remove('show');
+    document.querySelector('.profile_register.Login').style.display = "block";
 });
 	
-	
-	
-	
-	
-	
-	
-	
+document.querySelector('.MyProfile').addEventListener("click", function (event) {
+	overlay.style.display = "block";
+	document.querySelector('.modal.profile').style.display = "block";
+	document.querySelector('.modal.profile').style.zIndex = "2000";
+	document.querySelector('.profile_register.Login').style.display = "none";
+	document.querySelector('.profile_logo').innerHTML = MYDATA.firstName.charAt(0) + MYDATA.lastName.charAt(0);
+	document.querySelector('.profile_name').innerHTML = MYDATA.firstName + " " + MYDATA.lastName;
+});
+
+
+
 	
 });
 
@@ -346,6 +356,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
+
 
 
 
