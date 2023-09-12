@@ -281,6 +281,14 @@ document.addEventListener("DOMContentLoaded", function () {
       overlay.style.display = "none"; // Скрываем подложку
     }
   });
+  document.querySelectorAll('.Have_account ').forEach(function (x) {x.addEventListener("click", function (event) {
+    if (loginForm.style.display == "none") {
+     openLoginForm();
+    } else {
+     openRegisterForm();
+    }
+     });
+    });
 });
 
 
