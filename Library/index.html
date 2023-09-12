@@ -64,62 +64,9 @@
                         <img src="icons/burger.svg" alt="cross">
                     </div>
                 </div> 
-            </div>
-            
-        
-            <div class="modal_windows">
-                <div class="overlay"></div>
-                <div class="modal register_form">
-                <div class="action register">Register</div>
-                <div class="close_button"><img src="icons/close_btn.svg" alt="close"></div>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="first-name">First Name:</label>
-                        <input type="text" id="first-name" name="first-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="last-name">Last Name:</label>
-                        <input type="text" id="last-name" name="last-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="Have_account">Already have an account? <a href="#" id="loginLink">Login</a></div>
-                </form>
-                <div class="Sign_Up Log_in">
-                    <button type="submit">Sign Up</button>
-                </div>
-            </div>
-
-
-            <div class="modal Login_form">
-                <div class="action login">Login</div>
-                <div class="close_button"><img src="icons/close_btn.svg" alt="close"></div>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="email">E-mail or readers card</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <div class="Have_account">Don’t have an account? <a href="">Register</a></div>   
-                </form>
-                <div class="Sign_Up Log_in">
-                    <button type="submit">Log In</button>
-                </div>
-                
-
-            </div>
-        </div>     
+            </div>    
         </header>
-        
+
         <main>
             <section id='welcome' class="Welcome">
                 <h4 class="welcome_lib">
@@ -531,7 +478,96 @@
                     <a href="https://github.com/tatidem">Tatiana Demianova</a>
                 </div>
             </div>
-        </footer>   
+        </footer>
+        <div class="modal_windows">
+            <div class="overlay"></div>
+            <div class="modal register_form">
+                <div class="action register">Register</div>
+                <div class="close_button"><img src="icons/close_btn.svg" alt="close"></div>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="Have_account">Already have an account? <a href="#" id="loginLink">Login</a></div>
+                </form>
+                <div class="Sign_Up Log_in">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </div>
+            <div class="modal Login_form">
+                <div class="action login">Login</div>
+                <div class="close_button"><img src="icons/close_btn.svg" alt="close"></div>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="email">E-mail or readers card</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="Have_account">Don’t have an account? <a href="">Register</a></div>   
+                </form>
+                <div class="Sign_Up Log_in">
+                    <button type="submit">Log In</button>
+                </div>
+            </div>
+
+            <div class="modal profile">
+                <div class="close_button">
+                    <img src="icons/close_btn.svg" alt="close">
+                </div>
+                <div class="profile_wrapper">
+                    <div class="profile_left">
+                        <div class="profile_logo">JD</div>
+                        <div class="profile_name">John Doe</div>
+                    </div>
+                    <div class="profile_right">
+                        <div class="My_profile">My profile</div>
+                        <div class="profile_right_info">
+                            <div class="profile_items">
+                                <p>visits</p>
+                                <img src="icons/visits.svg" alt="visits">
+                                <span class="visit">23</span>
+                            </div>
+                            <div class="profile_items">
+                                <p>bonuses</p>
+                                <img src="icons/bonuses.svg" alt="bonuses">
+                                <span>1240</span>
+                            </div>
+                            <div class="profile_items">
+                                <p>books</p>
+                                <img src="icons/book.svg" alt="books">
+                                <span class="books">2</span>
+                            </div>
+                        </div>
+                        <div class="rented_books">Rented books</div>
+                        <ul class="rented_books">
+                            <li class="book_name">The Last Queen, Clive Irving</li>
+                        </ul>
+                        <div class="card">
+                            <div>Card number</div>
+                            <div class="card-number">F00234030</div>
+                            <img src="icons/icon copy.svg" alt="copy" id="copy-card" class="copy">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>    
     </div>
 </body>
 </html>

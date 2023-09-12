@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // При нажатии за пределами элемента .profile_register.Register
   document.addEventListener('click', function (event) {
     // Если нажатие было за пределами .profile_register.Register
-    if (!profileRegister.contains(event.target) && !profileIcon.contains(event.target)) {
+    if (!profileRegister.contains(event.target) || !profileIcon.contains(event.target)) {
       profileRegister.classList.remove('show'); // Скрываем элемент
     }
   });
@@ -216,6 +216,9 @@ registerLink.addEventListener('click', function () {
 document.addEventListener("DOMContentLoaded", function () {
   const loginLink = document.getElementById("loginLink");
   const registerLink = document.getElementById("registerLink");
+  const signUpButton = document.querySelector('.get_card .buttons .Sign_Up'); // Получаем кнопку "Sign Up"
+  const loginButton = document.querySelector('.get_card .buttons .Log_in');
+  const buyButton = document.querySelectorAll('.season_block .buy');
   const loginForm = document.querySelector(".modal.Login_form");
   const registerForm = document.querySelector(".modal.register_form");
   const closeButtons = document.querySelectorAll(".close_button");
@@ -239,6 +242,28 @@ document.addEventListener("DOMContentLoaded", function () {
   loginLink.addEventListener("click", openLoginForm);
   registerLink.addEventListener("click", openRegisterForm);
 
+    // При нажатии на кнопку "Sign Up"
+    signUpButton.addEventListener('click', function () {
+      registerForm.style.display = 'block';
+      loginForm.style.display = 'none';
+      overlay.style.display = "block";
+    });
+  
+    // При нажатии на кнопку "Log in"
+    loginButton.addEventListener('click', function () {
+      loginForm.style.display = 'block';
+      registerForm.style.display = 'none';
+      overlay.style.display = "block";
+    });
+  
+    // При нажатии на кнопку "buy"
+    buyButton.forEach(function (button) {
+      button.addEventListener('click', function () {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        overlay.style.display = "block";
+      });
+     });
   // Закрытие форм и подложки при клике на элементы с классом .close_button
   closeButtons.forEach(function (button) {
     button.addEventListener("click", function () {
@@ -249,63 +274,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Закрытие форм и подложки при клике вне формы
-  // document.addEventListener("click", function (event) {
-  //   if (!loginForm.contains(event.target) && !registerForm.contains(event.target)) {
-  //     loginForm.style.display = "none";
-  //     registerForm.style.display = "none";
-  //     overlay.style.display = "none"; // Скрываем подложку
-  //   }
-  // });
+  document.addEventListener("click", function (event) {
+    if (event.target == overlay) {
+      loginForm.style.display = "none";
+      registerForm.style.display = "none";
+      overlay.style.display = "none"; // Скрываем подложку
+    }
+  });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const signUpButton = document.querySelector('.get_card .buttons .Sign_Up'); // Получаем кнопку "Sign Up"
-  const loginButton = document.querySelector('.get_card .buttons .Log_in'); // Получаем кнопку "Log in"
-  const buyButton = document.querySelector('.season_block .buy'); // Получаем кнопку "buy"
-  const loginForm = document.querySelector('.modal.Login_form');
-  const registerForm = document.querySelector('.modal.register_form');
-  const closeButtons = document.querySelectorAll('.close_button');
-  const overlay = document.querySelector(".overlay");
 
-  // При нажатии на кнопку "Sign Up"
-  signUpButton.addEventListener('click', function () {
-    registerForm.style.display = 'block';
-    loginForm.style.display = 'none';
-    overlay.style.display = "block";
-  });
-
-  // При нажатии на кнопку "Log in"
-  loginButton.addEventListener('click', function () {
-    loginForm.style.display = 'block';
-    registerForm.style.display = 'none';
-    overlay.style.display = "block";
-  });
-
-  // При нажатии на кнопку "buy"
-  buyButton.addEventListener('click', function () {
-    loginForm.style.display = 'block';
-    registerForm.style.display = 'none';
-    overlay.style.display = "block";
-  });
-
-  // Закрытие формы при клике на элементы с классом .close_button
-  closeButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      loginForm.style.display = 'none';
-      registerForm.style.display = 'none';
-      overlay.style.display = "none";
-    });
-  });
-
-  // Закрытие формы при клике вне формы
-  // document.addEventListener('click', function (event) {
-  //   // Проверяем, является ли элемент, на который кликнули, частью формы или ее дочерним элементом
-  //   if (!loginForm.contains(event.target) && !registerForm.contains(event.target)) {
-  //     loginForm.style.display = 'none';
-  //     registerForm.style.display = 'none';
-  //   }
-  // });
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   const buyButtons = document.querySelectorAll('.buy');
