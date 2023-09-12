@@ -139,8 +139,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
     gap: 15px;
+    height: 400px;
+    width: 170px;
 }
 
 .profile_logo{
@@ -165,8 +167,8 @@
     justify-content: center;
     align-items: center;
     background: #FFF;
-    width: 120px;
-    height: 30px;
+    width: auto;
+    // height: 100%;
     flex-shrink: 0;
     color: #000;
     text-align: center;
