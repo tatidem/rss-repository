@@ -163,11 +163,11 @@
 }
 
 .profile_name{
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     background: #FFF;
-    width: auto;
+    width: 120px;
     // height: 100%;
     flex-shrink: 0;
     color: #000;
@@ -178,6 +178,7 @@
     font-weight: 400;
     line-height: 20px; /* 100% */
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 
 .profile_right{
