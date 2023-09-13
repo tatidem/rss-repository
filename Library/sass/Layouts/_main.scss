@@ -335,6 +335,41 @@
     margin: 40px 20px 41px 20px;
 }
 
+.find_card{
+    display:block;
+}
+
+.Your_library_card{
+    display: none;
+}
+
+.Your_library_card .profile_right_wrapper{
+    width: 170px;
+    margin-top: 15px;
+
+}
+
+.Your_library_card .profile_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.Your_library_card .profile_items p{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+
+
 .find_text{
     color: #000;
     font-family: 'Inter', sans-serif;
@@ -367,7 +402,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 .card_form{
@@ -401,7 +436,7 @@
     text-align: end;
 }
 
-.get_card p{
+.get_card p, .Visit_your_profile p{
     width: 456px;
     margin-top: 35px;
     color: #000;
@@ -414,13 +449,21 @@
     letter-spacing: 0.4px;
 }
 
+
+
 .get_card{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.get_card .Sign_Up.Log_in button{
+.Visit_your_profile{
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.get_card .Sign_Up.Log_in button, .Visit_your_profile .Profile button{
     margin: 35px 0 0 17px;  
 }
 

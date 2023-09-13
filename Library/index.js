@@ -311,7 +311,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 		document.getElementById("initialInput").innerHTML = firstName.charAt(0) + lastName.charAt(0);
         document.querySelector('.profile_icon').style.display = "none";
-		document.querySelector('.user_authorised').style.display = "flex";
+		    document.querySelector('.user_authorised').style.display = "flex";
+        document.querySelector('.find_card').style.display = "none";
+        document.querySelector('.get_card').style.display = "none";
+        document.querySelector('.Your_library_card').style.display = "block";
+        document.querySelector('.Visit_your_profile').style.display = "flex";
+
         registerForm.style.display = "none";
 		    overlay.style.display = "none";
     } else {
@@ -329,18 +334,24 @@ document.getElementById("initialInput").addEventListener('click', function () {
     document.querySelector('.profile_register.Login').style.display = "block";
 });
 	
-document.querySelector('.MyProfile').addEventListener("click", function (event) {
-	overlay.style.display = "block";
-	document.querySelector('.modal.profile').style.display = "block";
-	document.querySelector('.modal.profile').style.zIndex = "2000";
-	document.querySelector('.profile_register.Login').style.display = "none";
-	document.querySelector('.profile_logo').innerHTML = MYDATA.firstName.charAt(0) + MYDATA.lastName.charAt(0);
-	document.querySelector('.profile_name').innerHTML = MYDATA.firstName + " " + MYDATA.lastName;
-});
+
+function openProfile() {
+  overlay.style.display = "block";
+  document.querySelector('.modal.profile').style.display = "block";
+  document.querySelector('.modal.profile').style.zIndex = "2000";
+  document.querySelector('.profile_register.Login').style.display = "none";
+  document.querySelector('.profile_logo').innerHTML = MYDATA.firstName.charAt(0) + MYDATA.lastName.charAt(0);
+  document.querySelector('.profile_name').innerHTML = MYDATA.firstName + " " + MYDATA.lastName;
+}
+
+// Добавляем обработчик для .MyProfile
+document.querySelector('.MyProfile').addEventListener("click", openProfile);
+
+// Добавляем обработчик для .Visit_your_profile .Profile
+document.querySelector('.Visit_your_profile .Profile').addEventListener("click", openProfile);
 
 
 
-	
 });
 
 
@@ -355,10 +366,14 @@ document.addEventListener('DOMContentLoaded', function () {
           ownButtons[index].style.display = 'block';
       });
   });
+
 });
 
+// .find_card
+// .find_card
 
-
+// .Visit_your_profile
+//.Your_library_card
 
 
 /* const registerForm = document.querySelector(".modal.register_form");
