@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const profileCardNumber = document.querySelector('.profile_right .card_number');
 
     // Проверьте, что поля не пустые
-    if (firstName && lastName && email && pass) {//&& lastName && email && pass
+    if (firstName && lastName && validateEmail(email) && pass.length > 7) {//&& lastName && email && pass
 			regin({
 				firstName: firstName,
 				lastName:  lastName,
@@ -334,7 +334,22 @@ document.getElementById("initialInput").addEventListener('click', function () {
     document.querySelector('.profile_register.Login').style.display = "block";
 });
 
-
+document.getElementById('login_btn').addEventListener('click', function () {
+	var email = document.getElementById("email2").value;
+	var pass = document.getElementById("password2").value;
+	if (validateEmail(email) && pass) {//&& lastName && email && pass
+			regin({
+				firstName: MYDATA ? MYDATA.firstName : 'Tatiana',
+				lastName:  MYDATA ? MYDATA.lastName : 'Demianova',
+				email: email,
+				pass: pass 
+			});
+			loginForm.style.display = "none";
+            overlay.style.display = "none"; 
+	} else {
+		alert("Введите данные");
+	}
+});
 
 function openProfile() {
   overlay.style.display = "block";
@@ -403,6 +418,11 @@ function regin(data) {
 		document.querySelector('#card_number_a').disabled = true;
 		document.getElementById('card_number_a').value.placeholder = document.querySelector('.profile_right .card_number').textContent;
 	}
+}
+
+function validateEmail(email){ 
+     var re = /^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$/;
+     return re.test(email); 
 }
 
 !function(){
