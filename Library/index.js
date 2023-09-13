@@ -316,7 +316,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				firstName: firstName,
 				lastName:  lastName,
 				email: email,
-				pass: pass 
+				pass: pass,
+				card_number: randomString(9)
 			});
 		} else {
 			alert("Введите данные");
@@ -342,7 +343,8 @@ document.getElementById('login_btn').addEventListener('click', function () {
 				firstName: MYDATA ? MYDATA.firstName : 'Tatiana',
 				lastName:  MYDATA ? MYDATA.lastName : 'Demianova',
 				email: email,
-				pass: pass 
+				pass: pass, 
+				card_number: randomString(9)
 			});
 			loginForm.style.display = "none";
             overlay.style.display = "none"; 
@@ -358,6 +360,8 @@ function openProfile() {
   document.querySelector('.profile_register.Login').style.display = "none";
   document.querySelector('.profile_logo').innerHTML = MYDATA.firstName.charAt(0) + MYDATA.lastName.charAt(0);
   document.querySelector('.profile_name').innerHTML = MYDATA.firstName + " " + MYDATA.lastName;
+  document.querySelector('.card_number').innerHTML = MYDATA.card_number;
+  
 }
 
 // Добавляем обработчик для .MyProfile
@@ -414,9 +418,10 @@ function regin(data) {
 		document.querySelector(".overlay").style.display = "none";
 		document.querySelector('#name_a').value = MYDATA.firstName + " " + MYDATA.lastName;;
 		document.querySelector('#name_a').disabled = true;
-		document.querySelector('#card_number_a').value = document.querySelector('.card_number').innerHTML;
+		document.querySelector('#card_number_a').value = data.card_number;
 		document.querySelector('#card_number_a').disabled = true;
 		document.getElementById('card_number_a').value.placeholder = document.querySelector('.profile_right .card_number').textContent;
+		document.querySelector(".MyProfileNumber").innerHTML = '<div style="font-size: 12px;">'+data.card_number+'</div>';
 	}
 }
 
@@ -424,6 +429,14 @@ function validateEmail(email){
      var re = /^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$/;
      return re.test(email); 
 }
+
+function randomString(i) {
+    var rnd = '';
+    while (rnd.length < i) 
+        rnd += Math.random().toString(16).substring(2);
+    return rnd.substring(0, i).toUpperCase();
+};
+
 
 !function(){
 	MYDATA = localStorage.getItem("MYDATA_LB");
