@@ -2,10 +2,9 @@ function evaluateProject() {
   console.log()
   
 }
-  evaluateProject();
 
+evaluateProject();
 var MYDATA;
-
 
 document.addEventListener('DOMContentLoaded', function () {
   const burgerIcon = document.getElementById('burger-icon');
@@ -182,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const profileRegister = document.querySelector('.profile_register.Register');
   const loginLink = document.getElementById('loginLink'); // Получаем ссылку "Login"
   const registerLink = document.getElementById('registerLink'); // Получаем ссылку "Register"
+  const logOutLink = document.getElementById('LogOut');
 
   // При нажатии на иконку профиля
   profileIcon.addEventListener('click', function (event) {
@@ -194,15 +194,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // При нажатии за пределами элемента .profile_register.Register
   document.addEventListener('click', function (event) {
     // Если нажатие было за пределами .profile_register.Register
-    if (!profileRegister.contains(event.target) || !profileIcon.contains(event.target)) {
+    if (!profileRegister.contains(event.target) || !profileIcon.contains(event.target) || !document.querySelector('.Login').contains(event.target) ) {
       profileRegister.classList.remove('show'); // Скрываем элемент
-    }
+	  document.querySelector('.Login').style.display = 'none';
+    } 
   });
 
   loginLink.addEventListener('click', function () {
     loginForm.style.display = 'block';
     registerForm.style.display = 'none';
     profileRegister.classList.remove('show'); // Скрываем элемент
+});
+
+ document.getElementById('LogOut').addEventListener('click', function (event) {
+	MYDATA = {};
+	localStorage.setItem("MYDATA_LB", "");
+	location.reload();
 });
 
 // При нажатии на ссылку "Register"
@@ -295,45 +302,39 @@ document.addEventListener("DOMContentLoaded", function () {
 	
 	
 	document.querySelector('#register_btn').addEventListener('click', function () {
-    // Получите значения из полей ввода
-    var firstName = document.getElementById("first-name").value;
-    var lastName = document.getElementById("last-name").value;
-    var email = document.getElementById("email").value;
-    var pass = document.getElementById("password").value;
+		var firstName = document.getElementById("first-name").value;
+		var lastName = document.getElementById("last-name").value;
+		var email = document.getElementById("email").value;
+		var pass = document.getElementById("password").value;
+		var nameInput = document.getElementById('name_a').value;
+		var cardNumberInput = document.getElementById('card_number_a').value;
+		const profileCardNumber = document.querySelector('.profile_right .card_number');
 
     // Проверьте, что поля не пустые
     if (firstName && lastName && email && pass) {//&& lastName && email && pass
-		MYDATA = {
-			firstName: firstName,
-			lastName:  lastName,
-			email: email,
-			pass: pass 
+			regin({
+				firstName: firstName,
+				lastName:  lastName,
+				email: email,
+				pass: pass 
+			});
+		} else {
+			alert("Введите данные");
 		}
-		document.getElementById("initialInput").innerHTML = firstName.charAt(0) + lastName.charAt(0);
-        document.querySelector('.profile_icon').style.display = "none";
-		    document.querySelector('.user_authorised').style.display = "flex";
-        document.querySelector('.find_card').style.display = "none";
-        document.querySelector('.get_card').style.display = "none";
-        document.querySelector('.Your_library_card').style.display = "block";
-        document.querySelector('.Visit_your_profile').style.display = "flex";
-
-        registerForm.style.display = "none";
-		    overlay.style.display = "none";
-    } else {
-		alert("Введите данные");
-	}
-});
+	});
 
 // Добавьте обработчик события для иконки профиля
 
 document.getElementById("initialInput").addEventListener('click', function () {
+
   // const profileRegister = document.querySelector('.profile_register.Register');
   //const profileLogin = document.querySelector('.profile_register.Login');
     // При клике на иконку профиля показать форму .profile_register.Login
     document.querySelector('.profile_register.Register').classList.remove('show');
     document.querySelector('.profile_register.Login').style.display = "block";
 });
-	
+
+
 
 function openProfile() {
   overlay.style.display = "block";
@@ -350,8 +351,6 @@ document.querySelector('.MyProfile').addEventListener("click", openProfile);
 // Добавляем обработчик для .Visit_your_profile .Profile
 document.querySelector('.Visit_your_profile .Profile').addEventListener("click", openProfile);
 
-
-
 });
 
 
@@ -367,29 +366,46 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 
+  document.addEventListener('DOMContentLoaded', function () {
+    // Получите ссылку на элемент с id "LogOut"
+    const logOutLink = document.getElementById('LogOut');
+
+    // Добавьте обработчик события клика для ссылки "LogOut"
+    logOutLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Предотвратите стандартное действие ссылки (переход по ссылке)
+
+        // Выполните выход из аккаунта (например, отправьте запрос на сервер)
+        // ...
+
+        // После успешного выхода из аккаунта, перенаправьте пользователя на дефолтную страницу
+        window.location.href = "index.html"; // Замените "default.html" на URL вашей дефолтной страницы
+    });
 });
 
-// .find_card
-// .find_card
+});
 
-// .Visit_your_profile
-//.Your_library_card
+function regin(data) {
+	if (data){
+		MYDATA = data;
+		localStorage.setItem("MYDATA_LB", JSON.stringify(data));
+		document.getElementById("initialInput").innerHTML = data.firstName.charAt(0) + data.lastName.charAt(0);
+        document.querySelector('.profile_icon').style.display = "none";
+		document.querySelector('.user_authorised').style.display = "flex";
+        document.querySelector('.find_card').style.display = "none";
+        document.querySelector('.get_card').style.display = "none";
+        document.querySelector('.Your_library_card').style.display = "block";
+        document.querySelector('.Visit_your_profile').style.display = "flex";
+        document.querySelector(".modal.register_form").style.display = "none";
+		document.querySelector(".overlay").style.display = "none";
+		document.querySelector('#name_a').value = MYDATA.firstName + " " + MYDATA.lastName;;
+		document.querySelector('#name_a').disabled = true;
+		document.querySelector('#card_number_a').value = document.querySelector('.card_number').innerHTML;
+		document.querySelector('#card_number_a').disabled = true;
+		document.getElementById('card_number_a').value.placeholder = document.querySelector('.profile_right .card_number').textContent;
+	}
+}
 
-
-/* const registerForm = document.querySelector(".modal.register_form");
-const firstNameInput = document.getElementById("first-name");
-const lastNameInput = document.getElementById("last-name");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const initialInput = document.getElementById("initialInput");
-
-// Получите элементы профиля
-const profileIcon = document.querySelector('.profile_icon');
-const profileRegister = document.querySelector('.profile_register.Register');
-
-// Добавьте обработчик события для кнопки "Sign Up"
-const signUpButton = document.querySelector('#register_btn'); // Получаем кнопку "Sign Up" */
-
-
-
-
+!function(){
+	MYDATA = localStorage.getItem("MYDATA_LB");
+	if (MYDATA)  document.addEventListener('DOMContentLoaded', function () { regin(JSON.parse(MYDATA));});
+}();
