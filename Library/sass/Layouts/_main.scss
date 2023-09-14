@@ -103,8 +103,18 @@
     font-weight: 700;
     margin: 40px 0 0 20px;
 }
+
+.favorites_buttons{
+    position: sticky;
+    top: -1px;
+    background-color:#FFF;
+    z-index: 1;
+    
+}
+
 .radio_btn{
     margin-top: 35px;
+   
 }
 
 
