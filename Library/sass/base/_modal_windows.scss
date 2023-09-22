@@ -1,0 +1,284 @@
+.modal_windows{
+    position: relative;
+}
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    
+    width: 250px;
+    background: #FFF;
+    text-align: center;
+    justify-content: start;  
+}
+.modal.register_form{
+    display: none;
+    height: 382px;
+    z-index: 1000;
+}
+
+.modal.Login_form{ 
+    display: none;  
+    height: 262px;  
+    z-index: 1000;
+}
+
+.modal .action{
+    color: #000;
+    text-align: center;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    // line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin: 20px auto;
+}
+.modal .close_button{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.modal form{
+    width: 200px;
+    margin: 0 auto;
+    justify-content: start;
+    text-align: left;
+}
+
+.form-group {
+    text-align: left;
+    height: 50px;
+    margin-bottom: 10px;
+
+}
+
+.form-group label {
+    
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.3px;
+    display: block;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 200px;
+    height: 20px;
+    margin: 10px auto;
+    flex-shrink: 0;
+    padding: 5px;
+    border: 1px solid #BB945F;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.register_form .Sign_Up button{
+    top: 310px;
+    position: absolute;
+    left: 25px;
+}
+
+.Login_form .Log_in button{
+    top: 190px;
+    position: absolute;
+    left: 25px;
+}
+.modal .Have_account{
+    color: #000;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 55px;
+}
+.Have_account a{
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-decoration-line: underline;
+}
+
+.modal.profile {
+    display: none;
+    max-width: 600px;
+    width: 100%;
+    height: 400px;
+    background: #FFF;
+}
+
+.profile_wrapper{
+    display: flex;
+}
+
+.profile_left{
+    background-color: #0C0C0E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    height: 400px;
+    width: 170px;
+}
+
+.profile_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    color: #BB945F;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    text-transform: capitalize;
+}
+
+.profile_name{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    width: 120px;
+    // height: 100%;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+.profile_right{
+    padding-left: 20px;
+}
+
+.My_profile{
+    margin-top: 40px;
+    color: #000;
+    font-family: Forum;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 50% */
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+.profile_right_wrapper{
+    margin-top: 40px;
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+
+.profile_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile_items p{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+}
+
+.profile_items span{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 200% */
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+}
+
+.rented_books{
+    margin: 20px 0;
+    color: #0C0C0E;
+    text-align: left;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.rented_books_list li{
+    margin-top: 10px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    text-align: left;
+}
+.card{
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    margin-top: 40px;
+}
+.card .card_text{
+    color: #0C0C0E;
+    text-align: left;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+.card .card_number{
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
