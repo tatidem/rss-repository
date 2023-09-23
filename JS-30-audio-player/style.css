@@ -5,12 +5,97 @@
     margin: 0;
     padding: 0;
     transition: all 0.5s ease-in-out;
-    background-color: #1e1d1d;
-}
-main{
-    background-image: url('assets/img/1678801304_bogatyr-club-p-belii-fon-s-uzorami-foni-vkontakte-15.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-color: #484646;
+    color: #b3acac;
+
 }
 
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('assets/img/1678801304_bogatyr-club-p-belii-fon-s-uzorami-foni-vkontakte-15.jpg') center center/cover repeat;
+    height: 100vh;
+    
+}
+
+
+
+.player {
+    
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 60rem;
+    width: 100%;
+    
+    border-radius: 5rem;
+    
+}
+
+.author_name{
+    font-size: 3rem;
+    margin-top: 1.5rem;
+}
+
+.trek_name{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.author_img{
+    display: flex;
+    justify-content: center;
+}
+
+.progress_bar{
+    position: relative;
+    width: 30rem;
+    height: 0.5rem;
+    justify-self: center;
+    border: 0.5rem solid #b3adad;;
+    margin-top: 4rem;
+    border-radius: 0.5rem;
+}
+
+
+.author_img img{
+    
+    width: 50%;
+    height: 50%;
+    
+}
+
+.control_buttons{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 25rem;
+    
+    border-radius: 0.5rem;
+}
+
+
+#stop_btn{
+    display: none;
+    
+}
+
+
+footer {
+    padding: 1.5rem;
+
+
+}
+.footer_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.year{
+    font-size: 2.5rem;
+    color: aliceblue;
+}
