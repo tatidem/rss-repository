@@ -29,7 +29,7 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    max-width: 60rem;
+    max-width: 50rem;
     width: 100%;
     
     border-radius: 5rem;
@@ -58,7 +58,7 @@ main{
     justify-self: center;
     border: 0.1rem solid #b3adad;
     background-color: #b3acac;
-    margin-top: 4rem;
+    margin-top: 3rem;
     border-radius: 0.5rem;
     overflow: hidden; 
   }
@@ -73,9 +73,11 @@ main{
   
   .current_time,
 .remaining_time {
+    width: 20rem;
   font-size: 1.2rem; /* Размер шрифта времени */
   color: #ffffff; /* Цвет шрифта времени */
   margin-top: 0.5rem; /* Отступ сверху для времени */
+  z-index: 102;
 }
 
 .author_img img{
@@ -106,7 +108,7 @@ main{
 
 
 footer {
-    padding: 1.5rem;
+    padding: 1rem;
     
 
 
