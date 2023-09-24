@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <main>
@@ -15,15 +16,20 @@
             <div class="player">
                 <div class="author_img"><img src="assets/img/keys-of-moon-the-epic-hero.jpeg" alt=""></div>
                 <div class="author_name">Keys of Moon</div>
-                <div class="trek_name">The Epic Hero</div>
+                <div class="track_name">The Epic Hero</div>
                 <div class="progress_bar">
                     <div class="fill_bar"></div>
                 </div>
+                <audio class="music" src="assets/audio/Keys of Moon - The Epic Hero.mp3"></audio>
+            
+                <div class="current_time"></div>
+                <div class="remaining_time"></div>
+          
                 <div class="control_buttons">
-                    <button type="submit" id="backward_btn"><img src="assets/icons/backward.svg" alt="back"></button>
-                    <button type="submit" id="play_btn"><img src="assets/icons/play.svg" alt=""></button>
-                    <button type="submit" id="stop_btn"></button>
-                    <button type="submit" id="forward_btn"><img src="assets/icons/forward.svg" alt=""></button>
+                    <button type="submit" class="btn" id="backward_btn"><img src="assets/icons/backward.svg" alt="back"></button>
+                    <button type="submit" class="btn" id="play_btn"><img src="assets/icons/play.svg" alt=""></button>
+                    <button type="submit" class="btn" id="stop_btn"></button>
+                    <button type="submit" class="btn" id="forward_btn"><img src="assets/icons/forward.svg" alt=""></button>
     
                 </div>
             </div>
@@ -40,10 +46,11 @@
             
             
                 
-                <a href="https://github.com/tatidem"><img src="/assets/icons/github-mark/github-mark-white.svg" alt="github"></a>
+            <a href="https://github.com/tatidem"><img src="/assets/icons/github-mark/github-mark-white.svg" alt="github"></a>
             
         </div>
     </footer>
     
     
 </body>
+<script src="index.js"></script>

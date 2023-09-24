@@ -16,6 +16,7 @@ main{
     justify-content: center;
     background: url('assets/img/1678801304_bogatyr-club-p-belii-fon-s-uzorami-foni-vkontakte-15.jpg') center center/cover repeat;
     height: 100vh;
+    z-index: 100;
     
 }
 
@@ -40,7 +41,7 @@ main{
     margin-top: 1.5rem;
 }
 
-.trek_name{
+.track_name{
     font-size: 2rem;
     margin-top: 1rem;
 }
@@ -50,16 +51,32 @@ main{
     justify-content: center;
 }
 
-.progress_bar{
+.progress_bar {
     position: relative;
     width: 30rem;
-    height: 0.5rem;
+    height: 0.7rem;
     justify-self: center;
-    border: 0.5rem solid #b3adad;;
+    border: 0.1rem solid #b3adad;
+    background-color: #b3acac;
     margin-top: 4rem;
     border-radius: 0.5rem;
+    overflow: hidden; 
+  }
+  
+  .fill_bar {
+    width: 0;
+    height: 100%;
+    background-color: #2a2a2a;
+    transition: width 0.1s linear; 
+    z-index: 101;
+  }
+  
+  .current_time,
+.remaining_time {
+  font-size: 1.2rem; /* Размер шрифта времени */
+  color: #ffffff; /* Цвет шрифта времени */
+  margin-top: 0.5rem; /* Отступ сверху для времени */
 }
-
 
 .author_img img{
     
@@ -74,9 +91,13 @@ main{
     justify-content: space-between;
     width: 25rem;
     
-    border-radius: 0.5rem;
+  
 }
 
+.control_buttons .btn:hover{
+    filter: invert(100%);
+    cursor: pointer;
+}
 
 #stop_btn{
     display: none;
@@ -86,6 +107,8 @@ main{
 
 footer {
     padding: 1.5rem;
+    
+
 
 
 }
@@ -93,9 +116,11 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
     
 }
 .year{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: aliceblue;
 }
+
