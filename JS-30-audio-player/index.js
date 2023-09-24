@@ -1,79 +1,130 @@
-var audio = document.querySelector(".music"),
-    btnImg = document.querySelector(".play__btn"),
-    audioName = document.querySelector(".audio__name"),
-    audioImg = document.querySelector(".music__img"),
-    progressBar = document.querySelector(".progress__border"),
-    progressContainer = document.querySelector(".progress__bar");
+let music = document.querySelector(".music"),
+    buttonImg = document.getElementById("play_btn"),
+    trackName = document.querySelector(".track_name"),
+    authorName = document.querySelector(".author_name"),
+    authorImg = document.querySelector(".author_img"),
+    progressBar = document.querySelector(".fill_bar"),
+    progressBarContainer = document.querySelector(".progress_bar");
 
-var num = 0;
+    let isPlaying = false;
+    let currentTrackIndex = 0;
 
-function play(){
-    btnImg.src = "pouse.png";
-    audio.play();
+const tracks = [
+  {
+    name: "Keys of Moon - The Epic Hero",
+    author: "Keys of Moon",
+    imgSrc: "assets/img/keys-of-moon-the-epic-hero.jpeg",
+    audioSrc: "assets/audio/Keys of Moon - The Epic Hero.mp3",
+  },
+  {
+    name: "Makai Symphony - Dragon Castle",
+    author: "Makai Symphony",
+    imgSrc: "assets/img/makai-symphony-dragon-castle.jpeg",
+    audioSrc: "assets/audio/Makai Symphony - Dragon Castle.mp3",
+  },
+  {
+    name: "Scandinavianz - Breeze",
+    author: "Scandinavianz",
+    imgSrc: "assets/img/scandinavianz-breeze.jpeg",
+    audioSrc: "assets/audio/Scandinavianz - Breeze.mp3",
+  },
+];
+
+function playMusic() {
+  music.play();
+  buttonImg.innerHTML = '<img src="assets/icons/pause.svg" alt="pause">';
+  isPlaying = true;
 }
 
-function pause(){
-    btnImg.src = "play.png"
-    audio.pause()
+function pauseMusic() {
+  music.pause();
+  buttonImg.innerHTML = '<img src="assets/icons/play.svg" alt="play">';
+  isPlaying = false;
 }
 
-document.querySelector(".btn").addEventListener("click", ()=>{
-    num++;
-    if(num%2 !== 0){
-        play();
-    }
-
-    if(num%2 == 0){
-        pause()
-    }
+buttonImg.addEventListener("click", () => {
+  if (isPlaying) {
+    pauseMusic();
+  } else {
+    playMusic();
+  }
 });
 
-var songNum = 0;
+function changeTrack(index) {
+  if (index < 0) {
+    index = tracks.length - 1;
+  } else if (index >= tracks.length) {
+    index = 0;
+  }
 
-const songs = ["Music1", "Music2", "Music3"];
+  const track = tracks[index];
+  changeTrackAndInfo(track.name, track.author, track.imgSrc);
+  music.src = track.audioSrc;
+  currentTrackIndex = index;
 
-function changeMusic(song){
-    audioName.innerHTML = song;
-    audio.src = `${song}.mp3`;
-    audioImg.src = `music${songNum + 1}.png`;
+  if (isPlaying) {
+    playMusic();
+  }
 }
 
-document.querySelector(".next__btn").addEventListener("click", ()=>{
-    songNum++;
-
-    if(songNum > songs.length - 1){
-        songNum = 0;
-    }  
-
-    changeMusic(songs[songNum]);
-    play();
+document.getElementById("forward_btn").addEventListener("click", () => {
+  changeTrack(currentTrackIndex + 1);
 });
 
-document.querySelector(".prev__btn").addEventListener("click", ()=>{
-    songNum--;
+document.getElementById("backward_btn").addEventListener("click", () => {
+  changeTrack(currentTrackIndex - 1);
+});
 
-    if(songNum < 0){
-        songNum = songs.length - 1;
+function changeTrackAndInfo(trackNameText, authorNameText, imgSrc) {
+    trackName.textContent = trackNameText;
+    authorName.textContent = authorNameText; // Добавьте эту строку для обновления имени автора
+    const authorImgElement = authorImg.querySelector("img");
+    authorImgElement.src = imgSrc;
+    authorImgElement.alt = authorNameText;
+  }
+
+  function updateProgressBar() {
+    const duration = music.duration;
+    const currentTime = music.currentTime;
+    const width = (currentTime / duration) * 100;
+    progressBar.style.width = width + "%";
+
+    const currentMinutes = Math.floor(currentTime / 60);
+  const currentSeconds = Math.floor(currentTime % 60);
+  const remainingTime = duration - currentTime;
+  const remainingMinutes = Math.floor(remainingTime / 60);
+  const remainingSeconds = Math.floor(remainingTime % 60);
+
+  currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? "0" : ""}${currentSeconds}`;
+  remainingTimeDisplay.textContent = `-${remainingMinutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+  }
+  
+  music.addEventListener("timeupdate", updateProgressBar);
+  
+  function changeTrack(index) {
+    if (index < 0) {
+      index = tracks.length - 1;
+    } else if (index >= tracks.length) {
+      index = 0;
     }
+  
+    const track = tracks[index];
+    changeTrackAndInfo(track.name, track.author, track.imgSrc);
+    music.src = track.audioSrc;
+    currentTrackIndex = index;
+  
+    if (isPlaying) {
+      playMusic();
+    }
+  }
+  
+  document.getElementById("forward_btn").addEventListener("click", () => {
+    changeTrack(currentTrackIndex + 1);
+  });
+  
+  document.getElementById("backward_btn").addEventListener("click", () => {
+    changeTrack(currentTrackIndex - 1);
+  });
 
-    changeMusic(songs[songNum]);
-    play();
-});
 
-function musicBar(){
-    const duration = audio.duration;
-    const currentTime = audio.currentTime;
-    var width = (currentTime/duration) * 100;
-    progressBar.style.width = `${width}%`
-}
 
-audio.addEventListener("timeupdate", musicBar);
-
-function changeTime(elem){
-    const width = this.clientWidth;
-    const clickX = elem.offsetX;
-    const duration = audio.duration;
-    audio.currentTime = (clickX/width) * duration;
-}
-
-progressContainer.addEventListener("click", changeTime);
