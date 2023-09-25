@@ -71,13 +71,13 @@ main{
     z-index: 101;
   }
   
-  .current_time,
-.remaining_time {
-    width: 20rem;
-  font-size: 1.2rem; /* Размер шрифта времени */
-  color: #ffffff; /* Цвет шрифта времени */
-  margin-top: 0.5rem; /* Отступ сверху для времени */
-  z-index: 102;
+  .time{
+    display: flex;
+    width: 5rem;
+    font-size: 2rem; /* Размер шрифта времени */
+    color: #b3acac; /* Цвет шрифта времени */
+    margin-top: 0.5rem; /* Отступ сверху для времени */
+    z-index: 102;
 }
 
 .author_img img{
