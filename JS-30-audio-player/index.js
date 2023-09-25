@@ -4,7 +4,9 @@ let music = document.querySelector(".music"),
     authorName = document.querySelector(".author_name"),
     authorImg = document.querySelector(".author_img"),
     progressBar = document.querySelector(".fill_bar"),
-    progressBarContainer = document.querySelector(".progress_bar");
+    progressBarContainer = document.querySelector(".progress_bar"),
+    currentTimeDisplay = document.querySelector(".current_time"), 
+    remainingTimeDisplay = document.querySelector(".remaining_time");
 
     let isPlaying = false;
     let currentTrackIndex = 0;
@@ -101,30 +103,6 @@ function changeTrackAndInfo(trackNameText, authorNameText, imgSrc) {
   
   music.addEventListener("timeupdate", updateProgressBar);
   
-  function changeTrack(index) {
-    if (index < 0) {
-      index = tracks.length - 1;
-    } else if (index >= tracks.length) {
-      index = 0;
-    }
-  
-    const track = tracks[index];
-    changeTrackAndInfo(track.name, track.author, track.imgSrc);
-    music.src = track.audioSrc;
-    currentTrackIndex = index;
-  
-    if (isPlaying) {
-      playMusic();
-    }
-  }
-  
-  document.getElementById("forward_btn").addEventListener("click", () => {
-    changeTrack(currentTrackIndex + 1);
-  });
-  
-  document.getElementById("backward_btn").addEventListener("click", () => {
-    changeTrack(currentTrackIndex - 1);
-  });
-
+//   
 
 
