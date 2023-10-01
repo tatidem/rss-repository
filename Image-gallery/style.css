@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: #2b2a2a;
+    color: #1a7659;
+
+}
+
+.header_wrapper {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 5rem;
+    
+    
+}
+
+.searcher{
+    display: flex;
+    align-items: center;
+}
+
+
+.searcher input {
+    width: 100%;
+
+    padding: 0.8rem 1.2rem;
+    border-radius: 2rem;
+    outline: none;
+    border: 1px solid #1a7659;
+}
+
+
+
+.fa-camera-retro {
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    
+ 
+  }
+  
+.fa-camera-retro:before {
+    content: "\f083"; 
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;
+    
+}
+
+.divider{
+    height: 0.3rem;
+    width: 100%;
+    background-color: #1a7659;
+
+}
+.pictures{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+
+
+
+}
+.footer_wrapper{
+    margin-top: auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    
+}
+.year{
+    font-size: 2rem;
+    color: #1a7659;
+}
