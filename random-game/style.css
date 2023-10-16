@@ -3,23 +3,30 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    transition: all 0.5s ease-in-out;
     background-color: #515050;
     
+    
+}
+body{
+   height: 100vmin;
 }
 
 header{
+    max-height: 10vmin;
     display: flex;
     justify-content: center;
 }
 
 h1{
-    margin-top: 10px;
-    color: #eb8181;
+    margin-top: 1rem;
+    color: #162064;
+    
   
 }
 main{
-    min-height: 100vh;
+    max-height: 80vmin;
+    margin-top: 5vmin;
+    margin-bottom: 8vmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,22 +45,22 @@ main{
 	min-width: 160px;
     width: 100%;
 	height: 50px;
-	background: #221f21;
+	background: #1a1918;
 	border-radius: 5px;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .score_count{
 	font-size: 3vmin;
-	color:#eb8181;
+	color:#29389b;
 	font-weight: bold;
+    background-color: transparent;
 }
 
 .canvas_wrapper {
 	background-color: #221f21;
-	border-radius: 5px;
+	border-radius: 0.2rem;
 	border: 10px solid #221f21;
 	box-shadow: 0px 0px 40px 10px #221f21;
 
@@ -62,13 +69,42 @@ main{
 
 #game_canvas {
 	display: block;
-	border-radius: 5px;	
+	border-radius: 0.3rem;	
+    background-color: #6d5f49;
 }
+
+.best_score {
+	padding: 10px 15px;
+	min-width: 160px;
+    width: 100%;
+	height: 50px;
+	background: #1a1918;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;   
+}
+
+.best_score p{
+    font-size: 3vmin;
+	color:#29389b;
+	font-weight: bold;
+    background-color: transparent;
+}
+
+.last_10{
+	font-size: 3vmin;
+	color:#29389b;
+	font-weight: bold;
+    background-color: transparent;
+}
+
+
 
 .divider{
     height: 0.3rem;
     width: 100%;
-    background-color: #eb8181;
+    background-color: #162064;
 } 
 
   footer {
@@ -77,7 +113,7 @@ main{
 }
 .footer_wrapper{
     margin-top: auto;
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,5 +121,5 @@ main{
 
 .year{
     font-size: 1.5rem;
-    color: #eb8181;
+    color: #162064;
 }
