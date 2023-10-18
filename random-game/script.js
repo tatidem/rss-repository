@@ -4,7 +4,7 @@ let score = 0;
 
 const config = {
 	step: 0,
-	maxStep: 8,
+	maxStep: 9,
 	sizeCell: 16,
 	sizeBerry: 20 / 4
 }
@@ -102,8 +102,8 @@ function collisionBorder() {
 }
 function refreshGame() {
 	score = 0;
-	if (score > parseInt(localStorage.getItem("bestScore")) || !localStorage.getItem("bestScore")) {
-        localStorage.setItem("bestScore", score);
+	if (score > parseInt(localStorage.getItem("#bestScore")) || !localStorage.getItem("#bestScore")) {
+        localStorage.setItem("#bestScore", score);
     }
 	score = 0;
 	drawScore();
@@ -119,7 +119,7 @@ function refreshGame() {
 }
 
 function drawBestScore() {
-    bestScoreBlock.innerHTML = localStorage.getItem("bestScore") || 0;
+    bestScoreBlock.innerHTML = localStorage.getItem("#bestScore") || 0;
 }
 
 function drawBerry() {
@@ -142,7 +142,7 @@ function incScore() {
 function drawScore() {
 	scoreBlock.innerHTML = score;
 }
-
+drawBestScore();
 function getRandomInt(min, max) {
 	return Math.floor( Math.random() * (max - min) + min );
 }
